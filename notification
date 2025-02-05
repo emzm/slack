@@ -1,3 +1,27 @@
+Step 1: Setting Up a Slack App and Obtaining a Webhook URL
+To get started, you’ll need to set up a Slack app and obtain a webhook URL. Follow these instructions:
+
+a) Go to the Slack API website and sign in to your workspace.
+b) Create a new Slack app for your GitLab CI integration.
+c) In the app settings, navigate to the “Incoming Webhooks” section and enable it.
+d) Add a new webhook to your workspace and configure it according to your preferences.
+e) Copy the generated webhook URL, as you’ll need it in the next step.
+
+Step 2: Configuring GitLab CI to Utilize the Slack Integration
+With the Slack webhook URL in hand, it’s time to configure GitLab CI to utilize the integration. Follow these steps:
+
+a) Open your GitLab project and navigate to “Settings” > “CI/CD” > “Variables.”
+b) Click on “Add Variable” to create a new environment variable.
+c) Set the variable name as SLACK_WEBHOOK.
+d) In the value field, paste the Slack webhook URL you obtained in Step 1.
+e) Uncheck the “Protect variable” option to ensure it can be accessed in the after_script section.
+f) Save the variable to apply the changes.
+
+
+
+Sample after script written below
+
+
 stages:
   - git-clone
   - build
